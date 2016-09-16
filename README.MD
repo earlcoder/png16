@@ -8,7 +8,7 @@ convert -alpha on -colorspace sRGB -depth 16 INPUTFILE.EXT -depth 16 -colorspace
 #### If Dealing with images containing ICC:
 ```cmd
 convert -profile INPUTFILE.EXT -alpha on -colorspace sRGB -depth 16 INPUTFILE.EXT -depth 16 -colorspace sRGB -alpha on -profile INPUTFILE.EXT png64:output.png
-``
+```
 
 **Functions**
 ```rust
