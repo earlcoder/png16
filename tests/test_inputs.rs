@@ -20,7 +20,7 @@ fn test() {
 				panic!("Error decoding png: {:?}", e);
 			},
 		};
-		match png16::encode_png(png, png16::DEPTH_16, "result.png") {
+		match png16::encode_png(png, png16::DEPTH_16, "test.png") {
 			Ok(_) => (),
 			Err(e) => panic!("{:?}", e),
 		};		
