@@ -1,0 +1,12 @@
+[package]
+name = "png16"
+version = "0.1.0"
+authors = ["Earl <earl@darbeevision.com>"]
+
+[dependencies]
+byteorder = "*"
+flate2 = "^0.2"
+inflate = "*"
+crc = "^1.0.0"
+scan_dir = "*"
+
