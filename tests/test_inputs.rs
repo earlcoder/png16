@@ -17,12 +17,12 @@ fn test() {
 		let mut png = match png16::decode_16bit_png(f.to_str().unwrap()) {
 			Ok(png) => png,
 			Err(e) => {
-				panic!("Error decoding png: {:?}", e);
+				panic!("Error Decoding PNG: {:?}", e);
 			},
 		};
 		match png16::encode_png(png, png16::DEPTH_16, "test.png") {
 			Ok(_) => (),
-			Err(e) => panic!("{:?}", e),
+			Err(e) => panic!("Error Encoding PNG: {:?}", e),
 		};		
 	}
 }

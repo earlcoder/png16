@@ -572,14 +572,6 @@ fn avg_defilter(chunk: &[u8], width: u32, depth: u8, decode: &mut Vec<u8>) {
 
 // ******************************************************************
 // Recon(x) = Filt(x) + PaethPredictor(Recon(a), Recon(b), Recon(c))
-// p = a + b - c
-// pa = abs(p - a)
-// pb = abs(p - b)
-// pc = abs(p - c)
-// if pa <= pb and pa <= pc then Pr = a
-// else if pb <= pc then Pr = b
-// else Pr = c
-// return Pr
 // ******************************************************************
 fn paeth_defilter(chunk: &[u8], width: u32, depth: u8, decode: &mut Vec<u8>) {
 	let mut de_filterd = vec![];
@@ -591,6 +583,8 @@ fn paeth_defilter(chunk: &[u8], width: u32, depth: u8, decode: &mut Vec<u8>) {
 			a = 0x00;
 			b = decode[offset + (i - 1)] as i64;
 			c = 0x00;
+
+			// PaethPredictor ()
 			p = a + b - c;
 			pa = (p - a).abs();
 			pb = (p - b).abs();
