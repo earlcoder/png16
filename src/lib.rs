@@ -675,23 +675,23 @@ fn filter_rgba(png: &mut PNG, depth: u8) -> Result<Vec<u8>> {
 
 		let (mut none_deflated, mut sub_deflated, mut up_deflated, mut avg_deflated, mut paeth_deflated) = (vec![], vec![], vec![], vec![], vec![]);
 
-		match none.zlib_encode(Compression::Fast).read_to_end(&mut none_deflated) {
+		match none.zlib_encode(Compression::Best).read_to_end(&mut none_deflated) {
 			Ok(_) => (),
 			Err(e) => return Err(e),
 		};
-		match sub.zlib_encode(Compression::Fast).read_to_end(&mut sub_deflated) {
+		match sub.zlib_encode(Compression::Best).read_to_end(&mut sub_deflated) {
 			Ok(_) => (),
 			Err(e) => return Err(e),
 		};
-		match up.zlib_encode(Compression::Fast).read_to_end(&mut up_deflated) {
+		match up.zlib_encode(Compression::Best).read_to_end(&mut up_deflated) {
 			Ok(_) => (),
 			Err(e) => return Err(e),
 		};
-		match avg.zlib_encode(Compression::Fast).read_to_end(&mut avg_deflated) {
+		match avg.zlib_encode(Compression::Best).read_to_end(&mut avg_deflated) {
 			Ok(_) => (),
 			Err(e) => return Err(e),
 		};
-		match paeth.zlib_encode(Compression::Fast).read_to_end(&mut paeth_deflated) {
+		match paeth.zlib_encode(Compression::Best).read_to_end(&mut paeth_deflated) {
 			Ok(_) => (),
 			Err(e) => return Err(e),
 		};
